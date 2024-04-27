@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscrição Curso Como Águias - Mulheres</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ecc7c7;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    #form-container {
+        background-color: #652525;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        color: #fff;
+        max-width: 600px;
+        width: 100%;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    h1 img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    p {
+        text-align: justify;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="tel"],
+    select {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    input[type="submit"] {
+        display: none; /* Inicia oculto */
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #652525;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #652525;
+        color: #fff;
+    }
+
+    #formas-pagamento {
+        display: none;
+        text-align: center;
+        background-color: #ecc7c7;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        color: #652525;
+        max-width: 600px;
+        width: 100%;
+    }
+
+    select {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    #btnRedirecionar {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #652525;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    #btnRedirecionar:hover {
+        background-color: #652525;
+        color: #fff;
+    }
+
+    @media screen and (max-width: 600px) {
+        h1 {
+            font-size: 20px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div id="form-container">
+    <h1>
+        <img src="https://i.im.ge/2024/04/17/ZFMgqK.png-20220523-172028-00002.md.png" alt="png 20220523 172028 00002">
+        Inscrição Curso Como Águias - Mulheres
+    </h1>
+    <p>Este curso tem como propósito proporcionar o acesso ao conhecimento que liberta do cativeiro de todo ensino enganoso, baseado no esforço humano e práticas religiosas, que nunca terão um efeito duradouro e verdadeiro. Somente em Jesus, no Deus Pai, Filho e Espírito Santo é possível uma transformação real, de natureza, de dentro para fora.</p>
+    <p>Você não nasceu para se arrastar, Deus te fez para voar!<br>
+    Você não nasceu para pular, Deus te fez para voar alto!</p>
+    
+    <form id="inscricao-form" action="https://formsubmit.co/esdrasdcv@gmail.com" method="POST">
+        <label for="nome_completo">Nome Completo:</label>
+        <input type="text" id="nome_completo" name="nome_completo" required>
+
+        <label for="data_nascimento">Data de Nascimento:</label>
+        <input type="date" id="data_nascimento" name="data_nascimento" required>
+
+        <label for="telefone" id="telefone_label">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" required>
+
+        <input type="submit" id="btnSubmit" value="Próximo">
+        <input type="hidden" name="_next" value="https://mpago.li/2sxiJMg">
+        <input type="hidden" name="_captcha" value="false">
+    </form>
+</div>
+
+<div id="formas-pagamento">
+    <h1>Formas de pagamento</h1>
+    <select id="selectFormasPagamento">
+        <option value="">Selecione uma opção</option>
+        <option value="https://mpago.li/2sxiJMg">Crédito</option>
+        <option value="https://mpago.li/2sxiJMg">Débito</option>
+        <option value="https://mpago.li/2sxiJMg">PIX</option>
+    </select>
+    <button id="btnRedirecionar">Próximo</button>
+</div>
+
+<script>
+    document.getElementById("telefone").addEventListener("input", function() {
+        var btnSubmit = document.getElementById("btnSubmit");
+        if (this.value.trim() !== "") {
+            btnSubmit.style.display = "block";
+        } else {
+            btnSubmit.style.display = "none";
+        }
+    });
+
+    document.getElementById("btnSubmit").addEventListener("click", function(event) {
+        var nextPageInput = document.querySelector('input[name="_next"]');
+        if (nextPageInput) {
+            var nextPageURL = nextPageInput.value;
+            window.location.href = nextPageURL;
+        }
+    });
+</script>
+
+</body>
+</html>
